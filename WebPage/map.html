@@ -146,7 +146,7 @@ var poiIcon = L.icon({
     // Yellow markers
     L.marker([37.945466338403556, 23.647264153212546], {icon: yellowIcon}).bindPopup('<span class="change" style="font-size:20px;cursor:pointer" onclick="openNav(0)">&#9776; Τρούμπα</span>').addTo(map); // Troumpa Area in Piraeus
     L.marker([37.93701123908896, 23.64430959491093], {icon: yellowIcon}).bindPopup('<span class="change" style="font-size:20px;cursor:pointer" onclick="openNav(1)">&#9776; Αρχαιολογικό Μουσείο Πειραιά</span>').addTo(map); // Archaeological Museum of Piraeus
-    L.marker([37.94507574117309, 23.65423024835552], {icon: yellowIcon}).bindPopup('<span class="change" style="font-size:20px;cursor:pointer" onclick="openNav(2)">&#9776; Πύλης</span>').addTo(map); // Πύλης
+    L.marker([37.94507574117309, 23.65423024835552], {icon: yellowIcon}).bindPopup('<span class="change" style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Πύλης</span>').addTo(map); // Πύλης
     L.marker([37.94847480118557, 23.655679183390212], {icon: yellowIcon}).bindPopup('<h3>Ομηρίδου</h3>').addTo(map); // Ομηρίδου
     L.marker([37.94669576254082, 23.65585382571991], {icon: yellowIcon}).bindPopup('<h3>Σκλυλίτση</h3>').addTo(map); // Σκλυλίτση
     L.marker([37.94307243613091, 23.645604023873596], {icon: yellowIcon}).bindPopup('<h3>Κολοκοτρώνη</h3>').addTo(map); // Κολοκοτρώνη
@@ -187,6 +187,12 @@ var poiIcon = L.icon({
     
     function openNav(a)
     {
+      for(i=0;i<12;i++)
+      {
+        if(i>=2 && i<=5)
+          continue;
+        document.getElementById("mySideNav"+i).style.width = "0";
+      }
       document.getElementById("mySidenav"+a).style.width = "400px";
       console.log(a)
     }
